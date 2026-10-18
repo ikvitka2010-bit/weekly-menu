@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Тижневе меню</title>
+  <meta name="description" content="Меню на тиждень, заготовки і список покупок на двох.">
+  <meta name="theme-color" content="#0d0d0e" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5e8e6" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Меню">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;900&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><use href="#starburst"/></svg>
+    <div class="top-text">
+      <p class="eyebrow">Тижневе меню · на двох</p>
+      <h1 id="title">Сьогодні</h1>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="view-today" class="view" aria-labelledby="title"></section>
+    <section id="view-week" class="view" aria-labelledby="title" hidden></section>
+    <section id="view-prep" class="view" aria-labelledby="title" hidden></section>
+    <section id="view-shop" class="view" aria-labelledby="title" hidden></section>
+    <p id="load-error" class="empty" hidden>Не вдалося завантажити меню. Перевірте з'єднання і відкрийте застосунок ще раз.</p>
+  </main>
+
+  <nav class="tabbar" aria-label="Розділи">
+    <button type="button" data-tab="today">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+      <span>Сьогодні</span>
+    </button>
+    <button type="button" data-tab="week">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h2M14 14h2M8 17h2"/></svg>
+      <span>Тиждень</span>
+    </button>
+    <button type="button" data-tab="prep">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-5zM2 11h2M20 11h2M9 7.5c0-1.2 1-1.5 1-2.7M13 7.5c0-1.2 1-1.5 1-2.7"/></svg>
+      <span>Заготовки</span>
+    </button>
+    <button type="button" data-tab="shop">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 8z"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg>
+      <span>Покупки</span>
+    </button>
+  </nav>
+
+  <div id="sheet" class="sheet" hidden>
+    <div class="sheet-backdrop" data-close></div>
+    <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+      <div class="sheet-grip" aria-hidden="true"></div>
+      <button type="button" class="icon-btn sheet-close" data-close aria-label="Закрити рецепт">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div id="sheet-body" class="sheet-body"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="starburst" viewBox="0 0 100 100">
+      <g stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none">
+        <path d="M50 14v18M50 68v18M14 50h18M68 50h18M24.5 24.5l12.7 12.7M62.8 62.8l12.7 12.7M24.5 75.5l12.7-12.7M62.8 37.2l12.7-12.7"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <script src="app.js"></script>
+</body>
+</html>
