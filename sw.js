@@ -1,5 +1,5 @@
 // Bump VERSION after changing any app file so phones pick up the update.
-const VERSION = "menu-v1";
+const VERSION = "menu-v2";
 const SHELL = [
   "./",
   "index.html",

@@ -24,9 +24,12 @@
   <header class="top">
     <svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><use href="#starburst"/></svg>
     <div class="top-text">
-      <p class="eyebrow">Тижневе меню · на двох</p>
+      <p class="eyebrow">Тижневе меню</p>
       <h1 id="title">Сьогодні</h1>
     </div>
+    <button type="button" class="icon-btn settings-btn" id="settings-btn" aria-label="Налаштування">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+    </button>
   </header>
 
   <main id="main" tabindex="-1">
@@ -60,7 +63,7 @@
     <div class="sheet-backdrop" data-close></div>
     <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
       <div class="sheet-grip" aria-hidden="true"></div>
-      <button type="button" class="icon-btn sheet-close" data-close aria-label="Закрити рецепт">
+      <button type="button" class="icon-btn sheet-close" data-close aria-label="Закрити">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
       <div id="sheet-body" class="sheet-body"></div>
