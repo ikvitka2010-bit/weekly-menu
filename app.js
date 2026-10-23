@@ -8,6 +8,7 @@ const TABS = { today: "Сьогодні", week: "Тиждень", prep: "Заг�
 const PREP_DAYS = [0, 3];
 const FROZEN = "FROZEN";
 const DAY_MS = 864e5;
+const DEFAULT_DB = "https://weekly-menu-4ed8b-default-rtdb.europe-west1.firebasedatabase.app";
 
 const store = {
   get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -747,8 +748,8 @@ function renderSettings() {
         <button type="button" class="btn primary" data-invite>Запросити другий телефон</button>
         <button type="button" class="btn ghost" data-unsync>Відключити на цьому телефоні</button>
       ` : `
-        <p class="note">Потрібна безкоштовна база Firebase (5 хвилин, один раз). Інструкція — нижче.</p>
-        <label class="field wide"><span>Адреса бази (Realtime Database URL)</span><input type="url" id="db-url" placeholder="https://….firebasedatabase.app" value="${esc((S.sync && S.sync.db) || "")}"></label>
+        <p class="note">База Firebase вже вписана. Натисніть «Створити» на одному телефоні, потім «Запросити» — і надішліть посилання на другий.</p>
+        <label class="field wide"><span>Адреса бази (Realtime Database URL)</span><input type="url" id="db-url" placeholder="https://….firebasedatabase.app" value="${esc((S.sync && S.sync.db) || DEFAULT_DB)}"></label>
         <button type="button" class="btn primary" data-create-sync>Створити спільний список</button>
         <label class="field wide"><span>Або вставте посилання-запрошення</span><input type="url" id="invite-url" placeholder="https://…/weekly-menu/?db=…&list=…"></label>
         <button type="button" class="btn ghost" data-join-sync>Приєднатися</button>
